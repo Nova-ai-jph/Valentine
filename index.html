@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pour Valentine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#2b1420; --bg-soft:#3b1d2c; --text:#f6e9ec; --muted:#caa0b0;
+    --accent:#e7b7c7; --rose:#b54363; --gold:#caa15c; --line:rgba(246,233,236,.18);
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#2b1420; --bg-soft:#3b1d2c; --text:#f6e9ec; --muted:#caa0b0;
+      --accent:#e7b7c7; --rose:#b54363; --gold:#caa15c; --line:rgba(246,233,236,.18);
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Jost',sans-serif; font-weight:300;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    overflow-x:hidden;
+  }
+  .serif{font-family:'Cormorant Garamond',serif;}
+  section{
+    max-width:600px; margin:0 auto; padding:5.5rem 1.75rem;
+    text-align:center;
+  }
+  .divider{
+    <p>Tiens ta bague de fiançailles, c'est un cadeau de la part de ton Amoureux ❤️‍🔥🌹</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  var stage = document.getElementById('stage');
+  var noBtn = document.getElementById('noBtn');
+  var yesBtn = document.getElementById('yesBtn');
+  var reveal = document.getElementById('reveal');
+
+  function escapeNo(){
+    var sw = stage.clientWidth, sh = stage.clientHeight;
+    var bw = noBtn.offsetWidth, bh = noBtn.offsetHeight;
+    var x = Math.random() * Math.max(sw - bw, 10);
+    var y = Math.random() * Math.max(sh - bh, 10);
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+    noBtn.style.transform = 'none';
+  }
+
+  noBtn.addEventListener('pointerenter', escapeNo);
+  noBtn.addEventListener('pointerdown', function(e){ e.preventDefault(); escapeNo(); });
+  noBtn.addEventListener('click', function(e){ e.preventDefault(); escapeNo(); });
+
+  yesBtn.addEventListener('click', function(){
+    reveal.classList.add('show');
+    reveal.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+})();
+</script>
+
+</body>
+</html>
